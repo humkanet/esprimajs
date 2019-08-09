@@ -103,6 +103,14 @@ Rearrange variables and mangle variables and function names (include top level) 
     const $a=Math.PI,$b="Bconst",$c="Cconst";function $d($e,$f){function $g(){return $e+$f;}return $g();}const $e="Dconst";function $f($g,$h){return $g*$h;}const $g="Econst",$h="Fconst",$i="Gconst";let $j="Alet";
 
 
+Obfuscate string and integers:
+
+.. code:: shell
+
+    echo 'const A=100,B=200; console.log(`a+b=${A+B}`);' | python -m esprimajs -os -oi -mv 1 -i 0
+    const $a=0x64,$b=0o310;console.log(`\x61\x2b\x62\x3d${$a+$b}`);
+
+
 API
 ~~~
 
