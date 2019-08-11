@@ -7,6 +7,7 @@ def build(node, ctx, **kwargs):
 	ctx.mangler.enter()
 	# Parameters
 	ctx.write("(")
+	if ctx.mangle_variables: ctx.mangle(node.params, "variable")
 	ctx.enum(node.params, **kwargs)
 	ctx.write(")")
 	# Arrow
